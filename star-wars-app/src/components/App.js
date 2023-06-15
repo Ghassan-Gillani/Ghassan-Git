@@ -5,7 +5,7 @@ import store from '../redux/store';
 import PeopleList from './PeopleList';
 import PersonDetails from './PersonDetails';
 import Pagination from './Pagination';
-import 'bootstrap/dist/css/bootstrap.min.css'; 
+
 const App = () => {
   const [page, setPage] = useState(1);
 

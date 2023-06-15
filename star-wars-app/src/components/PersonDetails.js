@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchPerson } from '../redux/actions/peopleActions';
+import { useParams } from 'react-router-dom';
 
-const PersonDetails = ({ match }) => {
+const PersonDetails = () => {
   const dispatch = useDispatch();
+  const { id } = useParams();
   const { person, loading, error } = useSelector((state) => state.people);
 
   useEffect(() => {
-    const { id } = match.params;
     dispatch(fetchPerson(id));
-  }, [dispatch, match.params]);
+  }, [dispatch, id]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -20,7 +21,7 @@ const PersonDetails = ({ match }) => {
   }
 
   return (
-    <div>
+    <div className="container">
       <h2>Person Details</h2>
       <div>Name: {person.name}</div>
       <div>Height: {person.height}</div>

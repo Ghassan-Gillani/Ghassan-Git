@@ -12,10 +12,14 @@ const Pagination = ({ page, setPage }) => {
   };
 
   return (
-    <div>
-      <button onClick={handlePrevious}>Previous</button>
-      <span>Page: {page}</span>
-      <button onClick={handleNext}>Next</button>
+    <div className="container">
+      <button className="btn btn-primary" onClick={handlePrevious}>
+        Previous
+      </button>
+      <span className="mx-3">Page: {page}</span>
+      <button className="btn btn-primary" onClick={handleNext}>
+        Next
+      </button>
     </div>
   );
 };
